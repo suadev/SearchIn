@@ -18,15 +18,6 @@
 
     </Groups>
 
-    <!--<Buttons>
-      <Button guid="guidSearchPackageCmdSet" id="SearchId" priority="0x0100" type="Button">
-        <Parent guid="guidSearchPackageCmdSet" id="MyMenuGroup" />
-        <Strings>
-          <ButtonText>Search in...</ButtonText>
-        </Strings>
-      </Button>
-    </Buttons>-->
-
     <Menus>
       <Menu guid="guidSearchPackageCmdSet" id="MyMenu" priority="0x0200" type="Menu">
         <Parent guid="guidSearchPackageCmdSet" id="MyMenuGroup" />
@@ -39,6 +30,7 @@
     <Buttons>
       <Button guid="guidSearchPackageCmdSet" id="cmdSearchInGoogle" priority="0x0100" type="Button">
         <Parent guid="guidSearchPackageCmdSet" id="SearchGroup" />
+        <Icon guid="myIcons" id="googleIcon" />
         <Strings>
           <ButtonText>Google</ButtonText>
         </Strings>
@@ -46,20 +38,47 @@
 
       <Button guid="guidSearchPackageCmdSet" id="cmdSearchInGithub" priority="0x0110" type="Button">
         <Parent guid="guidSearchPackageCmdSet" id="SearchGroup" />
+        <Icon guid="myIcons" id="githubIcon" />
         <Strings>
           <ButtonText>Github</ButtonText>
         </Strings>
       </Button>
+
+      <Button guid="guidSearchPackageCmdSet" id="cmdSearchInSof" priority="0x0111" type="Button">
+        <Parent guid="guidSearchPackageCmdSet" id="SearchGroup" />
+        <Icon guid="myIcons" id="sofIcon" />
+        <Strings>
+          <ButtonText>Stackoverflow</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSearchPackageCmdSet" id="cmdSearchInMsdn" priority="0x1000" type="Button">
+        <Parent guid="guidSearchPackageCmdSet" id="SearchGroup" />
+        <Icon guid="myIcons" id="msdnIcon" />
+        <Strings>
+          <ButtonText>Msdn</ButtonText>
+        </Strings>
+      </Button>
+
     </Buttons>
 
-
-
     <Bitmaps>
+      <Bitmap guid="myIcons" href="Resources\google.png" />
+      <Bitmap guid="myIcons" href="Resources\github.png"   />
+      <Bitmap guid="myIcons" href="Resources\sof.png"   />
+      <Bitmap guid="myIcons" href="Resources\msdn.png" />
       <Bitmap guid="guidImages" href="Resources\Search.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
     </Bitmaps>
   </Commands>
 
   <Symbols>
+
+    <GuidSymbol name="myIcons" value="{5356ED3D-652F-42CD-B8FB-1E9A30CA981E}">
+      <IDSymbol name="googleIcon" value="1" />
+      <IDSymbol name="githubIcon" value="2" />
+      <IDSymbol name="sofIcon" value="3" />
+      <IDSymbol name="msdnIcon" value="4" />
+    </GuidSymbol>
 
     <GuidSymbol name="guidHtmlCtxMenu" value="{78F03954-2FB8-4087-8CE7-59D71710B3BB}">
       <IDSymbol name="IDM_HTMLCTXMENU" value="1" />
@@ -75,6 +94,8 @@
       <IDSymbol name="SearchGroup" value="0x2000" />
       <IDSymbol name="cmdSearchInGithub" value="0x0100" />
       <IDSymbol name="cmdSearchInGoogle" value="0x0150" />
+      <IDSymbol name="cmdSearchInSof" value="0x0200" />
+      <IDSymbol name="cmdSearchInMsdn" value="0x0250" />
       <IDSymbol name="SearchId" value="0x0100" />
     </GuidSymbol>
 

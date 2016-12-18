@@ -1,14 +1,13 @@
 ﻿using System;
 using System.ComponentModel.Design;
 using Microsoft.VisualStudio.Shell;
+using EnvDTE;
+using Microsoft.VisualStudio.Shell.Interop;
 
 namespace SearchIn
 {
     internal sealed class Search
     {
-        public const int SearchInGithubId = 0x0100;
-        public const int SearchInGoogleId = 0x0150;
-
         public static readonly Guid CommandSet = new Guid("26a7481b-530a-4440-a240-fdf008d4c61b");
 
         private readonly Package package;
@@ -25,8 +24,10 @@ namespace SearchIn
             _commandService = this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (_commandService != null)
             {
-                _commandService.AddCommand(new MenuCommand(this.SearchInGithub, new CommandID(CommandSet, SearchInGithubId)));
-                _commandService.AddCommand(new MenuCommand(this.SearchInGoogle, new CommandID(CommandSet, SearchInGoogleId)));
+                _commandService.AddCommand(new MenuCommand(this.SearchInGithub, new CommandID(CommandSet, CommandIds.SerchInGithubCommandId)));
+                _commandService.AddCommand(new MenuCommand(this.SearchInGoogle, new CommandID(CommandSet, CommandIds.SearchInGoogleCommandId)));
+                _commandService.AddCommand(new MenuCommand(this.SearchInSof, new CommandID(CommandSet, CommandIds.SerchInSofCommandId)));
+                _commandService.AddCommand(new MenuCommand(this.SearchInMsdn, new CommandID(CommandSet, CommandIds.SearchInMsdnCommandId)));
             }
         }
 
@@ -51,14 +52,44 @@ namespace SearchIn
 
         private void SearchInGithub(object sender, EventArgs e)
         {
-            var url = string.Format("{0}{1}", "https://github.com/search?utf8=✓&q=", "github ara");
-            System.Diagnostics.Process.Start(url); // open browser
+            RedirectToPage(BaseUrls.GithubBaseUrl);
         }
 
         private void SearchInGoogle(object sender, EventArgs e)
         {
-            var url = string.Format("{0}{1}", "https://www.google.com.tr/#q=", "google ara");
-            System.Diagnostics.Process.Start(url); // open browser
+            RedirectToPage(BaseUrls.GoogleBaseUrl);
+        }
+
+        private void SearchInSof(object sender, EventArgs e)
+        {
+            RedirectToPage(BaseUrls.SofBaseUrl);
+        }
+
+        private void SearchInMsdn(object sender, EventArgs e)
+        {
+            RedirectToPage(BaseUrls.MsdnBaseUrl);
+        }
+
+        private void RedirectToPage(string baseUri)
+        {
+            var text = GetSelectedText();
+            if (!string.IsNullOrEmpty(text))
+            {
+                var url = string.Format(baseUri, GetSelectedText());
+                System.Diagnostics.Process.Start(url);
+            }
+            else
+            {
+                VsShellUtilities.ShowMessageBox(this.ServiceProvider, "Select text to search in...", "Oops!",
+                         OLEMSGICON.OLEMSGICON_WARNING, OLEMSGBUTTON.OLEMSGBUTTON_OK, OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
+            }
+        }
+
+        private string GetSelectedText()
+        {
+            DTE dte = Package.GetGlobalService(typeof(DTE)) as DTE;
+            TextSelection ts = dte.ActiveDocument.Selection as TextSelection;
+            return ts.Text;
         }
     }
 }
