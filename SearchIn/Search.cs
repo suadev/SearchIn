@@ -24,11 +24,16 @@ namespace SearchIn
             _commandService = this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (_commandService != null)
             {
-                _commandService.AddCommand(new MenuCommand(this.SearchInGithub, new CommandID(CommandSet, CommandIds.SerchInGithubCommandId)));
-                _commandService.AddCommand(new MenuCommand(this.SearchInGoogle, new CommandID(CommandSet, CommandIds.SearchInGoogleCommandId)));
-                _commandService.AddCommand(new MenuCommand(this.SearchInSof, new CommandID(CommandSet, CommandIds.SerchInSofCommandId)));
-                _commandService.AddCommand(new MenuCommand(this.SearchInMsdn, new CommandID(CommandSet, CommandIds.SearchInMsdnCommandId)));
+                AddCommand(this.SearchInGithub, CommandIds.SerchInGithubCommandId);
+                AddCommand(this.SearchInGoogle, CommandIds.SearchInGoogleCommandId);
+                AddCommand(this.SearchInSof, CommandIds.SerchInSofCommandId);
+                AddCommand(this.SearchInMsdn, CommandIds.SearchInMsdnCommandId);
             }
+        }
+
+        private void AddCommand(EventHandler handler, int commandId)
+        {
+            _commandService.AddCommand(new MenuCommand(handler, new CommandID(CommandSet, commandId)));
         }
 
         public static Search Instance
@@ -75,8 +80,7 @@ namespace SearchIn
             var text = GetSelectedText();
             if (!string.IsNullOrEmpty(text))
             {
-                var url = string.Format(baseUri, GetSelectedText());
-                System.Diagnostics.Process.Start(url);
+                System.Diagnostics.Process.Start(string.Format(baseUri, text));
             }
             else
             {

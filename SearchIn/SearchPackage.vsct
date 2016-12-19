@@ -1,21 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-
   <Extern href="stdidcmd.h"/>
   <Extern href="vsshlids.h"/>
 
   <Commands package="guidSearchPackage">
-
     <Groups>
       <Group guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidHtmlCtxMenu" id="IDM_HTMLCTXMENU"/>
       </Group>
-
       <Group guid="guidSearchPackageCmdSet" id="SearchGroup" priority="0x0100">
         <Parent guid="guidSearchPackageCmdSet" id="MyMenu"/>
       </Group>
-
     </Groups>
 
     <Menus>
@@ -35,7 +30,6 @@
           <ButtonText>Google</ButtonText>
         </Strings>
       </Button>
-
       <Button guid="guidSearchPackageCmdSet" id="cmdSearchInGithub" priority="0x0110" type="Button">
         <Parent guid="guidSearchPackageCmdSet" id="SearchGroup" />
         <Icon guid="githubGuid" id="githubIcon" />
@@ -43,7 +37,6 @@
           <ButtonText>Github</ButtonText>
         </Strings>
       </Button>
-
       <Button guid="guidSearchPackageCmdSet" id="cmdSearchInSof" priority="0x0111" type="Button">
         <Parent guid="guidSearchPackageCmdSet" id="SearchGroup" />
         <Icon guid="sofGuid" id="sofIcon" />
@@ -51,7 +44,6 @@
           <ButtonText>Stackoverflow</ButtonText>
         </Strings>
       </Button>
-
       <Button guid="guidSearchPackageCmdSet" id="cmdSearchInMsdn" priority="0x1000" type="Button">
         <Parent guid="guidSearchPackageCmdSet" id="SearchGroup" />
         <Icon guid="msdnGuid" id="msdnIcon" />
@@ -59,7 +51,6 @@
           <ButtonText>Msdn</ButtonText>
         </Strings>
       </Button>
-
     </Buttons>
 
     <Bitmaps>
