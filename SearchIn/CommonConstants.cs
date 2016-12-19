@@ -4,7 +4,7 @@
     {
         public static readonly int SerchInGithubCommandId = 0x0100;
         public static readonly int SearchInGoogleCommandId = 0x0150;
-        public static readonly int SerchInSofCommandId = 0x0200;
+        public static readonly int SerchInSofCommandId = 0x0350;
         public static readonly int SearchInMsdnCommandId = 0x0250;
     }
 
