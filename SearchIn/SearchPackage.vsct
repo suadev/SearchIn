@@ -14,7 +14,7 @@
 
     <Menus>
       <Menu guid="guidSearchPackageCmdSet" id="MyMenu" priority="0x0200" type="Menu">
-        <Parent guid="guidSearchPackageCmdSet" id="MyMenuGroup" />
+        <Parent guid="guidSearchPackageCmdSet" id="MyMenuGroup"/>
         <Strings>
           <ButtonText>Search in...</ButtonText>
         </Strings>
