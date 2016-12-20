@@ -4,7 +4,8 @@
     <Identity Id="SearchIn.Suat KÖSE.d1c2bbde-8263-4108-a4f5-d9695e604e62" Version="1.0" Language="en-US" Publisher="Suat KÖSE" />
     <DisplayName>Fast Search in Google, Github etc.</DisplayName>
     <Description>A simple Visual Studio Extension to fast search in best-known sources such as Google, Github etc.</Description>
-    <Icon>logo.png</Icon>
+    <Icon>Resources\logo.png</Icon>
+    <PreviewImage>Resources\logo.png</PreviewImage>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
