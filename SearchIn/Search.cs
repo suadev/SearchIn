@@ -93,7 +93,7 @@ namespace SearchIn
         {
             DTE dte = Package.GetGlobalService(typeof(DTE)) as DTE;
             TextSelection ts = dte.ActiveDocument.Selection as TextSelection;
-            return ts.Text;
+            return ts.Text.Trim();
         }
     }
 }

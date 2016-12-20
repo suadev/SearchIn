@@ -5,10 +5,9 @@
 
   <Commands package="guidSearchPackage">
     <Groups>
-      <Group guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidHtmlCtxMenu" id="IDM_HTMLCTXMENU"/>
+      <Group guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0001">
       </Group>
-      <Group guid="guidSearchPackageCmdSet" id="SearchGroup" priority="0x0100">
+      <Group guid="guidSearchPackageCmdSet" id="SearchGroup" priority="0x0200">
         <Parent guid="guidSearchPackageCmdSet" id="MyMenu"/>
       </Group>
     </Groups>
@@ -62,7 +61,107 @@
     </Bitmaps>
   </Commands>
 
+  <CommandPlacements>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_SCRIPT" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_HTML" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_ASPX" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_ASAX" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_ASPX_CODE" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_ASAX_CODE" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_ASPX_CODE_VB" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_ASAX_CODE_VB" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_ASMX_CODE" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_HtmEdGrp" id="IDMX_HTM_SOURCE_ASMX_CODE_VB" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="CMDSETID_CssEdGrp" id="IDM_CTX_SOURCE" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="XamlEditorWindows" id="IDMX_XAML_SOURCE_BASIC"/>
+    </CommandPlacement>
+    <!--new-->
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="GuidVisualStudioHTMLDocumentContextMenu" id="IDVisualStudioHTMLDocumentContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="GuidVisualStudioCSSDocumentContextMenu" id="IDVisualStudioCSSDocumentContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSearchPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Parent guid="jsEditorCommandSet" id="jsContextMenu"/>
+    </CommandPlacement>
+  </CommandPlacements>
+
   <Symbols>
+
+    <!-- http://www.dotnetmonster.com/Uwe/Forum.aspx/vs-ext/647/Extending-editor-context-menu-for-xml-and-css-files -->
+    <GuidSymbol name="CMDSETID_CssEdGrp" value="{A764E896-518D-11d2-9A89-00C04F79EFC3}">
+      <IDSymbol name="IDM_CTX_SOURCE" value="0x102" />
+    </GuidSymbol>
+
+    <!-- Visual Studio Defines (http://gordon-breuer.de/post/2010/08/18/Visual-Studio-2010-Extension-Unicode-Converter-10-(with-Tutorial).aspx) -->
+    <GuidSymbol name="CMDSETID_HtmEdGrp" value="{d7e8c5e1-bdb8-11d0-9c88-0000f8040a53}">
+      <IDSymbol name="IDMX_HTM_SOURCE_BASIC" value="0x32" />
+      <IDSymbol name="IDMX_HTM_SOURCE_HTML" value="0x33" />
+      <IDSymbol name="IDMX_HTM_SOURCE_SCRIPT" value="0x34" />
+      <IDSymbol name="IDMX_HTM_SOURCE_ASPX" value="0x35" />
+      <IDSymbol name="IDMX_HTM_SOURCE_ASAX" value="0x3B" />
+      <IDSymbol name="IDMX_HTM_SOURCE_ASPX_CODE" value="0x36" />
+      <IDSymbol name="IDMX_HTM_SOURCE_ASAX_CODE" value="0x3C" />
+      <IDSymbol name="IDMX_HTM_SOURCE_ASPX_CODE_VB" value="0x37" />
+      <IDSymbol name="IDMX_HTM_SOURCE_ASAX_CODE_VB" value="0x3D" />
+      <IDSymbol name="IDMX_HTM_SOURCE_ASMX_CODE" value="0x38" />
+      <IDSymbol name="IDMX_HTM_SOURCE_ASMX_CODE_VB" value="0x39" />
+    </GuidSymbol>
+
+    <!-- These are Visual Studio constants not found in SDK header files (found via VSIPLogging) -->
+    <GuidSymbol name="GuidVisualStudioCSSWindowContextMenu" value="{a764e896-518d-11d2-9a89-00c04f79efc3}">
+      <IDSymbol name="IDVisualStudioCSSWindowContextMenu" value="0x102" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidVisualStudioCSSDocumentContextMenu" value="{64da400e-b4ad-4d67-aa92-4b7acb01ecd5}">
+      <IDSymbol name="IDVisualStudioCSSDocumentContextMenu" value="0x2" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidVisualStudioHTMLWindowContextMenu" value="{d7e8c5e1-bdb8-11d0-9c88-0000f8040a53}">
+      <IDSymbol name="IDVisualStudioASPXWindowContextMenu" value="0x35" />
+      <IDSymbol name="IDVisualStudioASPXCodeWindowContextMenu" value="0x36" />
+      <IDSymbol name="IDVisualStudioHTMLWindowContextMenu" value="0x33" />
+      <IDSymbol name="IDVisualStudioScriptWindowContextMenu" value="0x34" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidVisualStudioHTMLDocumentContextMenu" value="{78f03954-2fb8-4087-8ce7-59d71710b3bb}">
+      <IDSymbol name="IDVisualStudioHTMLDocumentContextMenu" value="0x1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidVisualStudioJSONDocumentContextMenu" value="{f718ca06-cf4f-4a0c-9106-e79e9ee5e7cd}">
+      <IDSymbol name="IDVisualStudioJSONDocumentContextMenu" value="0x3" />
+    </GuidSymbol>
+    <GuidSymbol name="XamlEditorWindows" value="{4C87B692-1202-46AA-B64C-EF01FAEC53DA}">
+      <IDSymbol name="IDMX_XAML_SOURCE_BASIC" value="0x0103"/>
+    </GuidSymbol>
+    <GuidSymbol name="jsEditorCommandSet" value="{D309F791-903F-11D0-9EFC-00A0C911004F}">
+      <IDSymbol name="jsContextMenu" value="0x040d"/>
+      <!-- 52 in hex is 0x0034 -->
+    </GuidSymbol>
+
     <GuidSymbol name="googleGuid" value="{5356ED3D-652F-42CD-B8FB-1E9A30CA981E}">
       <IDSymbol name="googleIcon" value="1" />
     </GuidSymbol>
@@ -74,10 +173,6 @@
     </GuidSymbol>
     <GuidSymbol name="msdnGuid" value="{9724FB0B-B2B3-4D9E-8EE0-84E7FCFB48C7}">
       <IDSymbol name="msdnIcon" value="1" />
-    </GuidSymbol>
-    
-    <GuidSymbol name="guidHtmlCtxMenu" value="{78F03954-2FB8-4087-8CE7-59D71710B3BB}">
-      <IDSymbol name="IDM_HTMLCTXMENU" value="1" />
     </GuidSymbol>
 
     <!-- This is the package guid. -->
