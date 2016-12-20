@@ -84,7 +84,7 @@ namespace SearchIn
             }
             else
             {
-                VsShellUtilities.ShowMessageBox(this.ServiceProvider, "Select text to search in...", "Oops!",
+                VsShellUtilities.ShowMessageBox(this.ServiceProvider, "Select text to search in...", string.Empty,
                          OLEMSGICON.OLEMSGICON_WARNING, OLEMSGBUTTON.OLEMSGBUTTON_OK, OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
             }
         }
