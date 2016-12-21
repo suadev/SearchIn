@@ -15,5 +15,5 @@ https://marketplace.visualstudio.com/items?itemName=SuatKOSE.FastSearchinGoogleG
 <p><img id="239378" src="https://i1.visualstudiogallery.msdn.s-msft.com/1f908c09-53a9-410e-8567-d30aa8a384f1/image/file/239378/1/1.jpg" alt="" width="695" height="565"></p>
 <p>&nbsp;</p>
 <p><span style="color:#000000"><strong>Screenshot 2 - Results in Msdn:</strong></span></p>
-<p><span><img id="239378" src="https://i1.visualstudiogallery.msdn.s-msft.com/1f908c09-53a9-410e-8567-d30aa8a384f1/image/file/239378/1/1.jpg" alt="" width="695" height="565"><br>
+<p><span> <img id="239481" src="https://i1.visualstudiogallery.msdn.s-msft.com/1f908c09-53a9-410e-8567-d30aa8a384f1/image/file/239481/1/2.jpg" alt="" width="802" height="614"><br>
 </span></p></div>
