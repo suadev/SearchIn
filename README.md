@@ -11,11 +11,9 @@ https://marketplace.visualstudio.com/items?itemName=SuatKOSE.FastSearchinGoogleG
 <p>Highlight some text on code editor and right click to seach in Google, Github, Msdn or Stackoverflow.</p>
 <p>See the attached screenshots below.</p>
 <p>&nbsp;</p>
-<p><strong>Screenshot 1:</strong></p>
+<p><strong>Screenshot 1 - Searching in Msdn:</strong></p>
 <p><img id="239378" src="https://i1.visualstudiogallery.msdn.s-msft.com/1f908c09-53a9-410e-8567-d30aa8a384f1/image/file/239378/1/1.jpg" alt="" width="695" height="565"></p>
 <p>&nbsp;</p>
-<p><span style="color:#000000"><strong>Screenshot 2:</strong></span></p>
-<p><span><img id="239373" src="/site/view/file/239373/1/2.jpg" alt="" width="802" height="614"><br>
-</span></p>
-
-        </div>
+<p><span style="color:#000000"><strong>Screenshot 2 - Results in Msdn:</strong></span></p>
+<p><span><img id="239378" src="https://i1.visualstudiogallery.msdn.s-msft.com/1f908c09-53a9-410e-8567-d30aa8a384f1/image/file/239378/1/1.jpg" alt="" width="695" height="565"><br>
+</span></p></div>
