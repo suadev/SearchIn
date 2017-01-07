@@ -3,6 +3,7 @@ using System.ComponentModel.Design;
 using Microsoft.VisualStudio.Shell;
 using EnvDTE;
 using Microsoft.VisualStudio.Shell.Interop;
+using EnvDTE80;
 
 namespace SearchIn
 {
@@ -80,7 +81,9 @@ namespace SearchIn
             var text = GetSelectedText();
             if (!string.IsNullOrEmpty(text))
             {
-                System.Diagnostics.Process.Start(string.Format(baseUri, text));
+                //System.Diagnostics.Process.Start(string.Format(baseUri, text)); //uncomment to open by default browser.
+                DTE dte = Package.GetGlobalService(typeof(DTE)) as DTE;
+                dte.ItemOperations.Navigate(string.Format(baseUri, text)); //open inside the Visual Studio
             }
             else
             {
