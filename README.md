@@ -1,4 +1,4 @@
-# Fast Search in Google, Github etc.
+# Fast Search in Google, Github etc. [![Build Status](https://travis-ci.org/suadev/SearchIn.svg?branch=master)](https://travis-ci.org/suadev/SearchIn)
 
 Available on Visual Studio Marketplace 
 
