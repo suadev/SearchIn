@@ -1,6 +1,6 @@
 # Fast Search in Google, Github etc.[![Build status](https://ci.appveyor.com/api/projects/status/tx6v94dee6uptest?svg=true)](https://ci.appveyor.com/project/suadev/searchin)
 
-Available on Visual Studio Marketplace 
+Available on Visual Studio Marketplace  
 
 https://marketplace.visualstudio.com/items?itemName=SuatKOSE.FastSearchinGoogleGithubetc
 
